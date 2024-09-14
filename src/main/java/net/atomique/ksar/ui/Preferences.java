@@ -99,6 +99,9 @@ public class Preferences extends javax.swing.JDialog {
     jComboBox2 = new javax.swing.JComboBox();
     jPanel3 = new javax.swing.JPanel();
     jPanel2 = new javax.swing.JPanel();
+    CSVSplitterPanel = new javax.swing.JPanel();
+    CSVSplitterLabel = new javax.swing.JLabel();
+    CSVSplitterTextField = new javax.swing.JTextField();
     OkButton = new javax.swing.JButton();
     CancelButton = new javax.swing.JButton();
 
@@ -182,6 +185,16 @@ public class Preferences extends javax.swing.JDialog {
 
     jPanel4.add(jPanel9);
 
+    //CSVSplitter
+    CSVSplitterPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+    CSVSplitterLabel.setText("CSV splitter:");
+    CSVSplitterPanel.add(CSVSplitterLabel);
+    CSVSplitterTextField.setText(Config.getCSVSplitter());
+    CSVSplitterTextField.setMinimumSize(new java.awt.Dimension(80, 28));
+    CSVSplitterTextField.setPreferredSize(new java.awt.Dimension(80, 28));
+    CSVSplitterPanel.add(CSVSplitterTextField);
+    jPanel4.add(CSVSplitterPanel);
+
     jScrollPane1.setViewportView(jPanel4);
 
     jPanel1.add(jScrollPane1, java.awt.BorderLayout.NORTH);
@@ -244,6 +257,7 @@ public class Preferences extends javax.swing.JDialog {
     Config.setImageHeight((Integer) jSpinner2.getModel().getValue());
     Config.setImageWidth((Integer) jSpinner1.getModel().getValue());
     Config.setLinuxDateFormat(jComboBox3.getSelectedItem().toString());
+    Config.setCSVSplitter(CSVSplitterTextField.getText());
     Config.save();
     dispose();
   } //GEN-LAST:event_OkButtonActionPerformed
@@ -276,6 +290,9 @@ public class Preferences extends javax.swing.JDialog {
   private javax.swing.JPanel jPanel7;
   private javax.swing.JPanel jPanel8;
   private javax.swing.JPanel jPanel9;
+  private javax.swing.JPanel CSVSplitterPanel;
+  private javax.swing.JLabel CSVSplitterLabel;
+  private javax.swing.JTextField CSVSplitterTextField;
   private javax.swing.JScrollPane jScrollPane1;
   private javax.swing.JSpinner jSpinner1;
   private javax.swing.JSpinner jSpinner2;

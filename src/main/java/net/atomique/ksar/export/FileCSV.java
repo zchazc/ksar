@@ -5,6 +5,7 @@
 
 package net.atomique.ksar.export;
 
+import net.atomique.ksar.Config;
 import net.atomique.ksar.graph.Graph;
 import net.atomique.ksar.kSar;
 import net.atomique.ksar.ui.SortedTreeNode;
@@ -43,7 +44,7 @@ public class FileCSV implements Runnable {
   public void run() {
 
     // print header
-    tmpcsv.append("Date;");
+    tmpcsv.append("Date").append(Config.getCSVSplitter());
 
     export_treenode_header(mysar.graphtree);
     tmpcsv.append("\n");
@@ -53,7 +54,7 @@ public class FileCSV implements Runnable {
     for (LocalDateTime tmpLDT : mysar.myparser.getDateSamples()) {
 
       String text = tmpLDT.format(formatter);
-      tmpcsv.append(text).append(";");
+      tmpcsv.append(text).append(Config.getCSVSplitter());
 
       Second tmp = new Second(tmpLDT.getSecond(),
               tmpLDT.getMinute(),

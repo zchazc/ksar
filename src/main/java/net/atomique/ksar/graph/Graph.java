@@ -230,7 +230,7 @@ public class Graph {
 
   public String make_csv() {
     StringBuilder tmp = new StringBuilder();
-    tmp.append("Date;");
+    tmp.append("Date").append(Config.getCSVSplitter());
     tmp.append(getCsvHeader());
     tmp.append("\n");
     TimeSeries datelist = Stats.get(0);
@@ -238,7 +238,7 @@ public class Graph {
     for (Object o : datelist.getTimePeriods()) {
       TimePeriod item = (TimePeriod) o;
       tmp.append(item.toString());
-      tmp.append(";");
+      tmp.append(Config.getCSVSplitter());
       tmp.append(getCsvLine((RegularTimePeriod) item));
       tmp.append("\n");
     }
@@ -251,7 +251,7 @@ public class Graph {
     for (int i = firstDataColumn; i < HeaderStr.length; i++) {
       TimeSeries tmpseries = Stats.get(i - firstDataColumn);
       tmp.append(graphtitle).append(" ").append(tmpseries.getKey());
-      tmp.append(";");
+      tmp.append(Config.getCSVSplitter());
     }
     return tmp.toString();
   }
@@ -262,7 +262,7 @@ public class Graph {
       TimeSeries tmpseries = Stats.get(i - firstDataColumn);
       tmp.append(tmpseries.getValue(t));
 
-      tmp.append(";");
+      tmp.append(Config.getCSVSplitter());
     }
     return tmp.toString();
   }

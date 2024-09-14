@@ -60,6 +60,7 @@ public class Config {
 
     setImageHeight(myPref.getInt("ImageHeight", 600));
     setImageWidth(myPref.getInt("ImageWidth", 800));
+    setCSVSplitter(myPref.get("CSVSplitter",","));
     setPDFPageFormat(myPref.get("PDFPageFormat", "A4"));
     setLinuxDateFormat(myPref.get("LinuxDateFormat", "Always ask"));
 
@@ -84,6 +85,7 @@ public class Config {
 
     myPref.putInt("ImageHeight", ImageHeight);
     myPref.putInt("ImageWidth", ImageWidth);
+    myPref.put("CSVSplitter", CSVSplitter);
     myPref.put("PDFPageFormat", PDFPageFormat);
     myPref.put("LinuxDateFormat", LinuxDateFormat);
 
@@ -176,6 +178,14 @@ public class Config {
     Config.ImageWidth = ImageWidth;
   }
 
+  public static String getCSVSplitter() {
+    return CSVSplitter;
+  }
+
+  public static void setCSVSplitter(String CSVSplitter) {
+    Config.CSVSplitter = CSVSplitter;
+  }
+
   public static String getPDFPageFormat() {
     return PDFPageFormat;
   }
@@ -241,5 +251,6 @@ public class Config {
   private static String PDFPageFormat;
   private static int ImageWidth;
   private static int ImageHeight;
+  private static String CSVSplitter;
 
 }
