@@ -421,6 +421,10 @@
                 <Plot Title="Response [ms]">
                     <cols>await</cols>
                 </Plot>
+                <Plot Title="util">
+                    <cols>%util</cols>
+                    <range>0,100</range>
+                </Plot>
             </Graph>
             <Graph name="DEV_11.5.7" Title="Devices (Block)" type="multiple">
                 <!-- DEV tps rkB/s wkB/s areq-sz aqu-sz await svctm %util -->
@@ -436,6 +440,10 @@
                 </Plot>
                 <Plot Title="Response [ms]">
                     <cols>await</cols>
+                </Plot>
+                <Plot Title="util">
+                    <cols>%util</cols>
+                    <range>0,100</range>
                 </Plot>
             </Graph>
             <Graph name="IO" Title="I/O" type="unique">
