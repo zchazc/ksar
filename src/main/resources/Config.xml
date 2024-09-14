@@ -52,7 +52,7 @@
             <color>255,127,0</color>
         </itemcolor>
         <itemcolor name="%iowait">
-            <color>255,0,127</color>
+            <color>19,255,251</color>
         </itemcolor>
         <itemcolor name="%wio">
             <color>255,0,127</color>
@@ -452,5 +452,5 @@
         </itemcolor>
 
     </colors>
-    
+
 </ConfiG>
